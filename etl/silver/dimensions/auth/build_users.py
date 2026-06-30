@@ -8,7 +8,7 @@ from etl.common.normalize import normalize_auth
 from etl.common.paths import BRONZE_DIR, SILVER_DIR
 
 BRONZE_AUTH_DIR = BRONZE_DIR / "auth"
-OUTPUT_FILE = SILVER_DIR / "users.parquet"
+OUTPUT_FILE = SILVER_DIR / "dimensions" / "users.parquet"
 TMP_DIR = SILVER_DIR / "tmp" / "users"
 
 OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)

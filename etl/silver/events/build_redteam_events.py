@@ -7,7 +7,7 @@ from etl.common.features import add_day
 from etl.common.paths import BRONZE_DIR, SILVER_DIR
 
 INPUT_FILE = BRONZE_DIR / "redteam.parquet"
-OUTPUT_FILE = SILVER_DIR / "redteam_events.parquet"
+OUTPUT_FILE = SILVER_DIR / "events" / "redteam_events.parquet"
 
 OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
 

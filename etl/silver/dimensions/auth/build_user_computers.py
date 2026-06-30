@@ -8,7 +8,7 @@ from etl.common.paths import BRONZE_DIR, SILVER_DIR
 
 BRONZE_AUTH_DIR = BRONZE_DIR / "auth"
 
-OUTPUT_FILE = SILVER_DIR / "user_computers.parquet"
+OUTPUT_FILE = SILVER_DIR / "facts" / "user_computers.parquet"
 TMP_DIR = SILVER_DIR / "tmp" / "user_computers"
 
 OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)

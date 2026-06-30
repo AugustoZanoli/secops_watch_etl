@@ -4,10 +4,10 @@ import polars as pl
 
 from etl.common.paths import SILVER_DIR
 
-USERS_FILE = SILVER_DIR / "users.parquet"
-DAILY_USERS_FILE = SILVER_DIR / "daily_user_activity.parquet"
-USER_COMPUTERS_FILE = SILVER_DIR / "user_computers.parquet"
-REDTEAM_FILE = SILVER_DIR / "redteam_events.parquet"
+USERS_FILE = SILVER_DIR / "dimensions" / "users.parquet"
+DAILY_USERS_FILE = SILVER_DIR / "facts" / "daily_user_activity.parquet"
+USER_COMPUTERS_FILE = SILVER_DIR / "facts" / "user_computers.parquet"
+REDTEAM_FILE = SILVER_DIR / "events" / "redteam_events.parquet"
 
 
 def main():
