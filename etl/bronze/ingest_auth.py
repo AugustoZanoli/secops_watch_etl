@@ -6,10 +6,6 @@ import pandas as pd
 import polars as pl
 from tqdm import tqdm
 
-# =====================================
-# Configurações
-# =====================================
-
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 RAW_FILE = PROJECT_ROOT / "data" / "raw" / "auth.txt.gz"
@@ -30,11 +26,6 @@ COLUMNS = [
 ]
 
 
-# =====================================
-# Utilidades
-# =====================================
-
-
 def prepare_output_directory() -> None:
     """
     Remove a Bronze antiga (caso exista) e cria uma nova.
@@ -43,11 +34,6 @@ def prepare_output_directory() -> None:
         shutil.rmtree(OUTPUT_DIR)
 
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-
-
-# =====================================
-# ETL
-# =====================================
 
 
 def ingest_auth() -> None:
@@ -107,11 +93,6 @@ def validate_dataset() -> None:
     ).collect(engine="streaming")
 
     print(summary)
-
-
-# =====================================
-# Main
-# =====================================
 
 
 def main():

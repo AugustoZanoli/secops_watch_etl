@@ -38,7 +38,6 @@ def main():
             .select(["user", pl.col("destination_computer").alias("computer")])
             .filter(pl.col("computer").str.starts_with("C"))
             .unique()
-            .unique()
             .collect(engine="streaming")
         )
 

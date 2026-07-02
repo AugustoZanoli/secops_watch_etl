@@ -50,7 +50,7 @@ def main():
         .group_by("day")
         .agg(
             [
-                pl.sum("total_authentications").alias("total_authentications"),
+                pl.sum("authentications").alias("authentications"),
                 pl.sum("success_logins").alias("success_logins"),
                 pl.sum("failed_logins").alias("failed_logins"),
             ]

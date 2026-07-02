@@ -27,17 +27,13 @@ def main():
 
     reset_tmp()
 
-    files = sorted(BRONZE_DIR.glob("*.parquet"))
+    files = sorted(BRONZE_AUTH_DIR.glob("*.parquet"))
 
     for i, file in enumerate(files):
 
         print(f"[{i+1}/{len(files)}] {file.name}")
 
         chunk = (
-            # pl.scan_parquet(file)
-            # .with_columns(
-            #     pl.col("source_user").str.split("@").list.first().alias("user")
-            # )
             normalize_auth(pl.scan_parquet(file))
             .filter(pl.col("user").str.starts_with("U"))
             .group_by("user")

@@ -6,6 +6,6 @@ __pycache__/
 *.pyo
 
 venv/
-.env/
+.env
 .venv/
 env/

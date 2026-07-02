@@ -1,0 +1,6 @@
+polars
+pandas
+tqdm
+sqlalchemy
+psycopg2-binary
+python-dotenv
