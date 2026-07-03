@@ -82,15 +82,7 @@ def validate_dataset() -> None:
 
     auth = pl.scan_parquet(str(OUTPUT_DIR / "*.parquet"))
 
-    summary = auth.select(
-        [
-            pl.len().alias("rows"),
-            pl.n_unique("source_user").alias("source_users"),
-            pl.n_unique("destination_user").alias("destination_users"),
-            pl.n_unique("source_computer").alias("source_computers"),
-            pl.n_unique("destination_computer").alias("destination_computers"),
-        ]
-    ).collect(engine="streaming")
+    summary = auth.select(pl.len().alias("rows")).collect(engine="streaming")
 
     print(summary)
 
